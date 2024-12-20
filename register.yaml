@@ -1,0 +1,18 @@
+---
+- hosts: ubuntu
+  tasks:
+  - name: run a command
+    command:
+      echo "I am running a command"
+    register: log
+  - name: error command
+    command:
+      ls -ltr abs
+    ignore_errors: true
+    register: log
+  - name: print stdout
+    debug:
+      msg: "Stdout {{ log.stdout }}"
+  - name: print stderr
+    debug:
+      msg: "Stderr: {{ log.stderr }}"

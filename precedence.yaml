@@ -1,0 +1,11 @@
+---
+- hosts: ubuntu
+  vars:
+    value: playbook
+  vars_files:
+  - vars/env2.yaml
+  - vars/env.yaml
+  tasks:
+  - name: print the value variable
+    debug:
+      msg: "Value for the variable is {{ value }}"

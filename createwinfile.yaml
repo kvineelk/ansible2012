@@ -1,0 +1,7 @@
+---
+- hosts: win
+  tasks:
+    - name: Create file
+      win_file:
+        path: C:\training
+        state: directory
